@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kartu Informasi</title>
+    <style>
+        body {
+            background-image: url("dolphins.gif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        div.card-fakta {
+            width: 700px;
+            height: auto;
+            background-color: rgba(234, 187, 243, 0.623);
+            text-align: center;
+            border-radius: 50px;
+            padding: 20px;
+        }
+
+        img.i {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-next {
+            background-color: #a65ee8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .btn-next:hover {
+            background-color: #8b48cc;
+        }
+
+        .subtitle {text-align: center;
+            font-family: "af";
+            color: rgb(255, 183, 239);}
+
+        .facts-list {text-align: center;
+            font-family: "gh";
+            color: rgb(252, 234, 174);
+            text-align: left;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        .card-footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .F {text-align: center;
+            font-family: "gh";
+            color: rgb(0, 0, 0);}
+
+        @font-face {
+    font-family: "af";
+    src: url("Morica.ttf");}
+
+    @font-face {
+    font-family: "gh";
+    src: url("DoblaSans-Regular.otf");}
+    </style>
+</head>
+<body>
+    <center>
+        <div class="card-fakta">
+            <img class="i" src="lumba-lumba 6.jpg" alt="lumba-lumba" id="factImage">
+            <div class="content">
+                <h2 class="F">Fakta - Fakta Menarik tentang Lumba-lumba</h2>
+                <p class="subtitle">Tahukah Kamu Fakta - Fakta Unik Ini</p>
+                <ul class="facts-list" id="factList">
+                    <li>Lumba-lumba dapat mengenali temannya dari rasa urine</li>
+                    <li>Tidak pernah mengunyah makanan</li>
+                    <li>Membuat bunyi ultrasonik untuk membantu mereka menemukan satu sama lain</li>
+                    <li>Otak lumba-lumba lebih besar dari manusia, tapi tidak lebih pintar</li>
+                </ul> <br>
+                <button class="btn-next" id="nextFact">Fakta Selanjutnya</button>
+                <div class="card-footer">© 2025 | Fakta Lumba-lumba • Informatika SMA</div>
+            </div>
+        </div>
+
+        <script>
+            const factData = [
+                {
+                    image: "lumba-lumba 2.jpeg",
+                    facts: [
+                        "Saat tertidur, terdapat satu sisi otak yang masih aktif untuk menjaga kesadaran dari ancaman predator",
+                        "Lumba-lumba mengandung merkuri berbahaya yang bisa meracuni jika dimakan",
+                        "Kelompok lumba-lumba bisa mencapai lebih dari 1.000 ekor",
+                        "Memiliki dua perut"
+                    ]
+                },
+                {
+                    image: "lumba-lumba 7.png",
+                    facts: [
+                        "Lumba-lumba juga bisa tenggelam",
+                        "Memiliki sekitar 40 spesies",
+                        "Dianggap sebagai hama oleh para nelayan karena memangsa ikan-ikan kecil",
+                        "Beberapa spesies hidup hingga 80 tahun"
+                    ]
+                },
+                {
+                    image: "lumba-lumba 4.jpg",
+                    facts: [
+                        "Pernapasan lumba-lumba tidak bisa berjalan otomatis",
+                        "Mudah terluka namun dapat sembuh dengan cepat",
+                        "Kemampuan menyelamnya hingga kedalaman seribu kaki",
+                        "Akan membunuh anaknya jika dirasa membahayakan sistem reproduksi induk"
+                    ]
+                },
+                {
+                    image: "lumba-lumba 8.jpg",
+                    facts: [
+                        "Tinggal bersama induknya selama tiga hingga delapan tahun",
+                        "Memiliki ingatan yang sangat tajam",
+                        "Paus ORCA adalah salah satu jenis lumba-lumba",
+                        "Sering berada di haluan kapal karena menikmati gelombang tekanan yang dihasilkan"
+                    ]
+                }
+            ];
+
+            const factList = document.getElementById("factList");
+            const factImage = document.getElementById("factImage");
+            const nextBtn = document.getElementById("nextFact");
+
+            nextBtn.addEventListener("click", () => {
+                factList.classList.add("fade-out");
+
+                setTimeout(() => {
+                    const randomFact = factData[Math.floor(Math.random() * factData.length)];
+                    factImage.style.opacity = 0;
+
+                    setTimeout(() => {
+                        factImage.src = randomFact.image;
+                        factImage.style.opacity = 1;
+                    }, 400);
+
+                    factList.innerHTML = randomFact.facts.map(f => `<li>${f}</li>`).join("");
+                    factList.classList.remove("fade-out");
+                }, 500);
+            });
+        </script>
+    </center>
+</body>
+</html>
