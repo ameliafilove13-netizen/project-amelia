@@ -1,0 +1,288 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dufan</title>
+    <style>
+        /* --- CSS: Pengaturan Tampilan --- */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #beddf1;
+            color: #053844;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Navigasi --- */
+        header {
+            background-color: #266cd4;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: sans-serif;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc80;
+        }
+
+        /* --- Container Utama --- */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto; /* Memberi jarak dari header */
+            padding: 0 20px;
+            flex: 1; /* Agar footer selalu di bawah */
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding-top: 80px; /* Jarak untuk anchor link navigasi */
+            margin-top: -80px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #276cd3;
+            display: inline-block;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+
+        /* --- Galeri (Grid Layout) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- Kuliner Section --- */
+        .kuliner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .food-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .food-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* --- Lokasi & Kontak (Flexbox) --- */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .map-box {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 250px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #266cd4;
+            color: #d7ccc8;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Dufan Ancol</h1>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="deskripsi">
+            <h2 class="section-title">Tentang Dufan</h2>
+            <p style="text-align: center; font-size: 18px; margin-bottom: 20px;">
+                Dunia Fantasi (Dufan) adalah taman hiburan bertema internasional pertama di Indonesia yang diresmikan pada 29 Agustus 1985 di kawasan Ancol, Jakarta Utara, yang dirancang sebagai pusat rekreasi edukatif dengan membagi wilayahnya ke dalam berbagai zona budaya dunia dan menggunakan maskot ikonik bekantan untuk meningkatkan kesadaran terhadap satwa langka asal Kalimantan.
+                
+            </p>
+        </section>
+
+        <section id="galeri">
+            <h2 class="section-title">Galeri Foto</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="tornado.jpg" alt="Tornado">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Tornado Dufan</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Kora-kora-Dufan.jpg" alt="Kora-kora">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Kora-Kora Dufan</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="halilintar.jpg" alt="Halilintar Dufan">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Halilintar Dufan</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="ontanganting.jpg" alt="Ontang-Anting">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Ontang-Anting</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="arungjeram.jpg" alt="Arung Jeram ">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Arung Jeram</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="istanaboneka.jpeg" alt="Istana boneka">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Istana boneka</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kuliner">
+            <h2 class="section-title">Kuliner Khas & Populer</h2>
+            <div class="kuliner-list">
+                <div class="food-card">
+                    <img src="yoshinoya.jpg" alt="Yoshinoya">
+                    <div class="food-info">
+                        <h3>Yoshinoya</h3>
+                        <p>Restoran dari Jepang</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="mcd.jpeg" alt="Mcdonald's">
+                    <div class="food-info">
+                        <h3>Mcdonalds</h3>
+                        <p>Makanan cepat saji khas barat</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="baso_afung.jpeg" alt="Baso Afung" onerror="this.src='https://via.placeholder.com/300?text=Es+Selendang+Mayang'">
+                    <div class="food-info">
+                        <h3>Baso Afung</h3>
+                        <p>Baso Afung, baso dengan daging sapi 100%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lokasi">
+            <h2 class="section-title">Lokasi & Kontak</h2>
+            <div class="contact-wrapper">
+                
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.1146741270253!2d106.83063527585093!3d-6.115233659976313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1e1cd7253569%3A0x633513360b09391!2sDunia%20Fantasi!5e0!3m2!1sid!2sid!4v1708500000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Pusat Informasi</h3>
+                    <br>
+                    <p><strong>📍 Alamat:</strong><br>Jl. Lodan Timur No.7, Ancol, Kec. Pademangan, Jakarta Utara, DKI Jakarta 14430.</p>
+                    <p><strong>📞 Telepon (Ancol Customer Care):</strong><br>021-2922-2222</p>
+                    <p><strong>📧 Email:</strong><br>customercare@ancol.com</p>
+                    <p><strong>⏰ Jam Operasional:</strong><br>Senin - Minggu: 10.00 - 18.00 WIB (Jadwal dapat berubah saat high season)</p>
+                    <p><strong>📧 Harga Tiket:</strong><br>Weekday dan Weekend: Rp.250.000-Rp.325.000</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Dufan Ancol. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

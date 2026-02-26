@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Kota Tua Jakarta</title>
+    <style>
+        /* --- CSS: Pengaturan Tampilan --- */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fdf6e3;
+            color: #4b3621;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Navigasi --- */
+        header {
+            background-color: #5d4037;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: sans-serif;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc80;
+        }
+
+        /* --- Container Utama --- */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto; /* Memberi jarak dari header */
+            padding: 0 20px;
+            flex: 1; /* Agar footer selalu di bawah */
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding-top: 80px; /* Jarak untuk anchor link navigasi */
+            margin-top: -80px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #5d4037;
+            display: inline-block;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+
+        /* --- Galeri (Grid Layout) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- Kuliner Section --- */
+        .kuliner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .food-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .food-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* --- Lokasi & Kontak (Flexbox) --- */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .map-box {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 250px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #3e2723;
+            color: #d7ccc8;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Kota Tua Jakarta</h1>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="deskripsi">
+            <h2 class="section-title">Tentang Kota Tua</h2>
+            <p style="text-align: center; font-size: 18px; margin-bottom: 20px;">
+                Kota Tua Jakarta, juga dikenal sebagai Batavia Lama, adalah sebuah wilayah kecil di Jakarta, Indonesia. Wilayah khusus ini memiliki luas 1,3 kilometer persegi melintasi Jakarta Utara dan Jakarta Barat. Nikmati arsitektur kolonial Belanda, museum bersejarah, dan suasana tempo dulu yang tak terlupakan. 
+                Kota Tua Jakarta terbentuk karena letaknya yang strategis di muara Sungai Ciliwung dan dekat jalur perdagangan internasional. Pada awalnya wilayah ini merupakan pelabuhan Kerajaan Sunda yang bernama Sunda Kelapa. Tahun 1527, Fatahillah merebutnya dan mengganti namanya menjadi Jayakarta. Pada tahun 1619, VOC Belanda menghancurkan Jayakarta dan membangun kota baru bernama Batavia yang menjadi pusat pemerintahan dan perdagangan kolonial. Setelah Indonesia merdeka, Batavia berganti nama menjadi Jakarta, dan kawasan Kota Tua kini dilestarikan sebagai kawasan bersejarah yang menyimpan banyak bangunan peninggalan masa kolonial.
+                
+            </p>
+        </section>
+
+        <section id="galeri">
+            <h2 class="section-title">Galeri Foto</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Museum.jpg" alt="Museum Fatahillah">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Museum Fatahillah</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Museumwayang.jpg" alt="Museum Wayang">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Museum Wayang</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="tokomerah.jpeg" alt="Toko Merah">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Toko Merah</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="sepeda.jpg" alt="Sepeda Ontel">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Sepeda Ontel Wisata</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="mandiri.jpg" alt="Museum Bank Mandiri">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Museum Bank Mandiri</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="pelabuhan.jpeg" alt="Pelabuhan Sunda Kelapa">
+                    <p style="text-align: center; font-size: 14px; margin-top:5px;">Pelabuhan Sunda Kelapa</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kuliner">
+            <h2 class="section-title">Kuliner Khas & Populer</h2>
+            <div class="kuliner-list">
+                <div class="food-card">
+                    <img src="keraktelor.png" alt="Kerak Telor">
+                    <div class="food-info">
+                        <h3>Kerak Telor</h3>
+                        <p>Makanan ikonik Betawi dari beras ketan putih, telur ayam/bebek, dan ebi.</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="gado-gado.jpg" alt="Gado Gado">
+                    <div class="food-info">
+                        <h3>Gado-Gado</h3>
+                        <p>Salad khas Indonesia dengan bumbu kacang yang lezat dan kerupuk.</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="selendangmayang.jpg" alt="Es Selendang Mayang" onerror="this.src='https://via.placeholder.com/300?text=Es+Selendang+Mayang'">
+                    <div class="food-info">
+                        <h3>Es Selendang Mayang</h3>
+                        <p>Minuman segar tradisional yang mulai langka, manis dan menyegarkan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lokasi">
+            <h2 class="section-title">Lokasi & Kontak</h2>
+            <div class="contact-wrapper">
+                
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.037132924434!2d106.81112421476884!3d-6.136894995556683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f600451a9a4d%3A0x6a05307567087093!2sKota%20Tua%20Jakarta!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Pusat Informasi</h3>
+                    <br>
+                    <p><strong>📍 Alamat:</strong><br>Kawasan Kota Tua, Taman Fatahillah No.1, Jakarta Barat, DKI Jakarta.</p>
+                    <p><strong>📞 Telepon (Darurat/Info):</strong><br>021-1234-5678</p>
+                    <p><strong>📧 Email:</strong><br>info@kotatuajakarta.go.id</p>
+                    <p><strong>⏰ Jam Operasional:</strong><br>Senin - Minggu: 08.00 - 22.00 WIB</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2024 Wisata Kota Tua Jakarta. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

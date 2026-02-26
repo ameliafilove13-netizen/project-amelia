@@ -1,0 +1,64 @@
+Tentu, mari kita bedah kode tersebut satu per satu agar Anda paham bagaimana cara kerjanya. Saya akan membaginya menjadi dua bagian utama: **HTML** (kerangka/isi) dan **CSS** (tampilan/gaya).
+
+### 1. Bagian CSS (Di dalam tag `<style>`)
+
+Ini adalah bagian yang mengatur "kosmetik" atau tampilan agar terlihat rapi.
+
+* **`body { ... }`**: Mengatur tampilan seluruh halaman.
+* `display: flex; flex-direction: column; align-items: center;`: Ini teknik *Flexbox*. Fungsinya agar **semua konten otomatis berada di tengah halaman** secara horizontal.
+* `background-color: #f0f2f5;`: Memberikan warna latar belakang abu-abu muda (supaya tidak putih polos yang menyilaukan).
+
+
+* **`.container { ... }`**:
+* `max-width: 600px;`: Membatasi lebar area konten. Jadi, meskipun dibuka di layar monitor lebar, daftar profil tidak akan melebar ke samping sampai habis, tetap rapi di tengah.
+
+
+* **`.profile-card { ... }`**: Ini adalah kotak putih untuk setiap orang.
+* `display: flex;`: **Sangat Penting!** Perintah ini membuat foto (kiri) dan teks (kanan) bisa **berjajar ke samping**. Tanpa ini, teks akan jatuh ke bawah foto.
+* `margin-bottom: 20px;`: Memberi jarak/spasi ke bawah antar kotak profil supaya tidak menempel.
+* `box-shadow`: Memberikan efek bayangan tipis agar kotak terlihat "mengambang" atau 3D.
+* `border-radius: 10px;`: Membuat sudut kotak menjadi tumpul (melengkung), tidak lancip.
+
+
+* **`.profile-card img { ... }`**: Khusus mengatur foto profil.
+* `border-radius: 50%;`: Mengubah foto kotak menjadi **lingkaran bulat**.
+* `object-fit: cover;`: Menjaga proporsi foto. Jika foto aslinya gepeng atau lonjong, perintah ini akan memotongnya (crop) otomatis agar pas di lingkaran tanpa terlihat "penyet".
+
+
+
+---
+
+### 2. Bagian HTML (Di dalam tag `<body>`)
+
+Ini adalah kerangka atau isi konten yang akan ditampilkan.
+
+* **`<div class="container">`**:
+* Ini adalah wadah besar pembungkus semua profil.
+
+
+* **`<div class="profile-card">`**:
+* Ini adalah wadah untuk **satu orang**. Jika Anda ingin menambah orang ke-6, Anda cukup *copy-paste* dari pembuka `<div class="profile-card">` sampai penutup `</div>` milik orang tersebut.
+
+
+* **`<img src="..." alt="...">`**:
+* `src`: Singkatan dari *source* (sumber). Di sini Anda menaruh link gambar atau nama file foto (misal: `foto1.jpg`).
+* `alt`: Teks alternatif. Jika foto gagal dimuat (rusak/sinyal jelek), tulisan ini yang akan muncul.
+
+
+* **`<div class="info">`**:
+* Ini adalah pengelompokan untuk teks (Nama, Posisi, Domisili). Tujuannya dikelompokkan agar teks ini bisa diatur posisinya terpisah dari foto.
+
+
+* **`<h3>` dan `<p>**`:
+* `<h3>`: Digunakan untuk Nama agar tulisannya tebal dan agak besar (Heading).
+* `<p>`: Digunakan untuk rincian data (Paragraf). Tag `<strong>` di dalamnya membuat tulisan seperti "Posisi:" menjadi **tebal**.
+
+
+
+### Ringkasan Alur Kerjanya:
+
+1. Browser membaca **HTML** untuk tahu ada 5 data orang.
+2. Browser membaca **CSS** (`.profile-card`) yang menyuruh: "Hei, buat setiap orang dibungkus kotak putih, lalu taruh fotonya di kiri dan teksnya di kanan."
+3. Browser membaca **CSS** (`body`) yang menyuruh: "Semua kotak itu tolong disusun rapi di tengah layar."
+
+Apakah ada bagian spesifik yang ingin Anda ubah? Misalnya ingin fotonya jadi kotak lagi (tidak bulat)?
